@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh_EN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二叉树</title>
+</head>
+<body>
+
+<script>
+    var arr=[];
+    function BinaryTree(){
+        var Node=function(key){
+            this.key=key;
+            this.left=null;
+            this.right=null;
+
+        }
+        //定义根节点
+        var root=null;
+        var insertNode=function(node,newNode){
+             var index=arr.indexOf(node.key);
+
+            //
+            if(newNode.key<node.key){
+                //如果没有左节点为空
+                if(node.left===null){
+                    arr.unshift(newNode.key)
+                    node.left=newNode;
+                }else{
+                    insertNode(node.left,newNode)
+                }
+            }else{
+                //如果没有左节点为空
+                if(node.right===null){
+                    arr.push(newNode.key)
+                    node.right=newNode;
+                }else{
+                    insertNode(node.right,newNode)
+                }
+
+            }
+
+        }
+        this.insert=function(key){
+            var newNode=new Node(key);
+
+            //如果跟节点为空
+            if(root===null){
+                arr.push(key)
+                root=newNode;
+            }else{
+                insertNode(root,newNode)
+            }
+        }
+    }
+    var nodes=[8,3,10,1,6,14,4,7,13];
+    var binaryTree=new BinaryTree();
+    var a=nodes.forEach(function(key){
+        binaryTree.insert(key)
+
+    })
+    console.log(arr);
+
+</script>
+
+</body>
+</html>
