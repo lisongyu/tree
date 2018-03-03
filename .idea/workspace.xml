@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c9216245-d6b3-41df-8a97-24f5eeedd7cd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/lisy.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binaryTree.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binaryTreeold.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/binaryTreeMiddle.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/binaryTreeold.html" afterPath="$PROJECT_DIR$/binaryTreearr.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -22,7 +22,7 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="binaryTree.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="binaryTree.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/binaryTree.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="472">
@@ -32,8 +32,18 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="binaryTreeold.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/binaryTreeold.html">
+      <file leaf-file-name="binaryTreeMiddle.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/binaryTreeMiddle.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="68" column="57" lean-forward="true" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="binaryTreearr.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/binaryTreearr.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -51,6 +61,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/binaryTree.html" />
+        <option value="$PROJECT_DIR$/binaryTreeMiddle.html" />
       </list>
     </option>
   </component>
@@ -180,16 +191,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519691361636</updated>
-      <workItem from="1519691363384" duration="6201000" />
+      <workItem from="1519691363384" duration="8772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6201000" />
+    <option name="totallyTimeSpent" value="8772000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -221,7 +232,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/binaryTreeold.html">
+    <entry file="file://$PROJECT_DIR$/binaryTreearr.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -233,6 +244,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/binaryTreeMiddle.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="68" column="57" lean-forward="true" selection-start-line="68" selection-start-column="57" selection-end-line="68" selection-end-column="57" />
           <folding />
         </state>
       </provider>
