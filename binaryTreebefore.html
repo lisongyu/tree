@@ -5,7 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>二叉树</title>
+    <title>二叉树的前序遍历</title>
+    <!--其目的是复制节点树-->
 </head>
 <body>
 
@@ -21,6 +22,7 @@
         //定义根节点
         var root=null;
         var insertNode=function(node,newNode){
+             var index=arr.indexOf(node.key);
 
 
             //
@@ -28,7 +30,7 @@
                 //如果没有左节点为空
                 if(node.left===null){
 
-
+                        arr.splice(index,0,newNode.key);
 
 
                     node.left=newNode;
@@ -38,7 +40,7 @@
             }else{
                 //如果没有左节点为空
                 if(node.right===null){
-
+                    arr.splice(index+1,0,newNode.key);
                     node.right=newNode;
                 }else{
                     insertNode(node.right,newNode)
@@ -52,21 +54,58 @@
 
             //如果跟节点为空
             if(root===null){
-
+                arr.push(key)
                 root=newNode;
             }else{
                 insertNode(root,newNode)
             }
         }
+        var inOrderTraverseNode=function(node,callback){
+            if(node!==null){
+                //访问其左子树
+                inOrderTraverseNode(node.left,callback);
+                //访问当前节点
+                callback(node.key);
+                //访问其右子树
+                inOrderTraverseNode(node.right,callback);
+            }
+
+        }
+        //中序遍历
+        this.inOrderTraverse=function(callback){
+            inOrderTraverseNode(root,callback)
+
+        }
+
+        //前序遍历方法
+        var preOrderTraverseNode=function(node,callback){
+            if(node!==null){
+                callback(node.key);
+                preOrderTraverseNode(node.left,callback);
+                preOrderTraverseNode(node.right,callback)
+            }
+
+        }
+        //前序遍历
+        this.preOrderTraverse=function(callback){
+            preOrderTraverseNode(root,callback)
+        }
     }
     var nodes=[8,3,10,1,6,14,4,7,13];
 
     var binaryTree=new BinaryTree();
-    var a=nodes.forEach(function(key){
-        binaryTree.insert(key)
 
-    })
-    console.log(arr);
+//    console.log(arr);
+    var callback=function(key){
+        console.log(key);
+    }
+    var a=nodes.forEach(function(key){
+        binaryTree.insert(key);
+
+
+    });
+    binaryTree.preOrderTraverse(callback);
+
 
 </script>
 

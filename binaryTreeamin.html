@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="zh_EN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>二叉树的查找最小值</title>
+
+</head>
+<body>
+
+<script>
+    var arr=[];
+    function BinaryTree(){
+        var Node=function(key){
+            this.key=key;
+            this.left=null;
+            this.right=null;
+
+        }
+        //定义根节点
+        var root=null;
+        var insertNode=function(node,newNode){
+             var index=arr.indexOf(node.key);
+
+
+            //
+            if(newNode.key<node.key){
+                //如果没有左节点为空
+                if(node.left===null){
+
+                        arr.splice(index,0,newNode.key);
+
+
+                    node.left=newNode;
+                }else{
+                    insertNode(node.left,newNode)
+                }
+            }else{
+                //如果没有左节点为空
+                if(node.right===null){
+                    arr.splice(index+1,0,newNode.key);
+                    node.right=newNode;
+                }else{
+                    insertNode(node.right,newNode)
+                }
+
+            }
+
+        }
+        this.insert=function(key){
+            var newNode=new Node(key);
+
+            //如果跟节点为空
+            if(root===null){
+                arr.push(key)
+                root=newNode;
+            }else{
+                insertNode(root,newNode)
+            }
+        }
+        var inOrderTraverseNode=function(node,callback){
+            if(node!==null){
+                //访问其左子树
+                inOrderTraverseNode(node.left,callback);
+                //访问当前节点
+                callback(node.key);
+                //访问其右子树
+                inOrderTraverseNode(node.right,callback);
+            }
+
+        }
+        //中序遍历
+        this.inOrderTraverse=function(callback){
+            inOrderTraverseNode(root,callback)
+
+        }
+
+        //前序遍历方法
+        var preOrderTraverseNode=function(node,callback){
+            if(node!==null){
+                callback(node.key);
+                preOrderTraverseNode(node.left,callback);
+                preOrderTraverseNode(node.right,callback)
+            }
+
+        }
+        //前序遍历
+        this.preOrderTraverse=function(callback){
+            preOrderTraverseNode(root,callback)
+        }
+        //后序遍历方法
+        var postOrderTraverseNode=function(node,callback){
+            if(node!==null){
+
+                postOrderTraverseNode(node.left,callback);
+                postOrderTraverseNode(node.right,callback);
+                callback(node.key);
+            }
+
+        }
+        //后序遍历方法
+        this.postOrderTraverse=function(callback){
+            postOrderTraverseNode(root,callback)
+        }
+        var minOrderTraverseNode=function(node){
+            if(node){
+                while (node&&node.left!==null){
+                    node=node.left;
+                }
+
+
+
+               return node.key;
+            }
+
+            return null
+
+        }
+        this.minNode=function(){
+           return minOrderTraverseNode(root)
+        }
+
+        var maxOrderTraverseNode=function(node){
+            if(node){
+                while (node&&node.right!==null){
+                    node=node.right;
+                }
+
+
+
+                return node.key;
+            }
+
+            return null
+
+        }
+        this.maxNode=function(){
+            return maxOrderTraverseNode(root)
+        }
+
+        //查找节点
+        var searchNode=function(node,key){
+            if(node===null){
+               return false
+            }
+            //如果查找的值小于根节点
+            if(key<node.key){
+                //左子树进行查找
+                return searchNode(node.left,key);
+
+            }
+            else if(key>node.key){
+                //左子树进行查找
+               return searchNode(node.right,key);
+
+            }
+            else{
+                //左子树进行查找
+               return true;
+
+            }
+
+        }
+
+        this.search=function(key){
+            return searchNode(root,key);
+        }
+
+    }
+    var nodes=[8,3,10,1,6,14,4,7,13];
+
+    var binaryTree=new BinaryTree();
+
+//    console.log(arr);
+    var callback=function(key){
+        console.log(key);
+    }
+    var a=nodes.forEach(function(key){
+        binaryTree.insert(key);
+
+
+    });
+    var min=binaryTree.minNode();
+    console.log(min);
+    var max=binaryTree.maxNode();
+    console.log(max);
+
+   console.log( binaryTree.search(7));
+    console.log( binaryTree.search(11));
+
+
+</script>
+
+</body>
+</html>
